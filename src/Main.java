@@ -3,5 +3,7 @@ public class Main {
         Robert robert = new Robert();
 
         robert.introduce();
+        robert.askName();
+        robert.askBirthYear();
     }
 }
