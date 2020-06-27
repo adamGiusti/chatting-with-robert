@@ -16,6 +16,7 @@ public class Quiz {
     void askQuestions() {
         askQuestion1();
         askQuestion2();
+        askQuestion3();
     }
 
     void askQuestion1() {
@@ -35,7 +36,7 @@ public class Quiz {
     }
 
     void askQuestion2() {
-        System.out.println("2. Which of the following pieces of code represents a single-line comment?");
+        System.out.println("2. Which of the following represents a single-line comment?");
         System.out.println();
 
         System.out.println("A. /* */");
@@ -46,6 +47,22 @@ public class Quiz {
 
         char userAnswer = getUserAnswer();
         char correctAnswer = 'B';
+
+        validateUserAnswer(userAnswer, correctAnswer);
+    }
+
+    void askQuestion3() {
+        System.out.println("3. Which of the following is a post-test loop?");
+        System.out.println();
+
+        System.out.println("A. while loop");
+        System.out.println("B. for loop");
+        System.out.println("C. do-while loop");
+        System.out.println("D. for-each loop");
+        System.out.println();
+
+        char userAnswer = getUserAnswer();
+        char correctAnswer = 'C';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
