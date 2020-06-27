@@ -18,6 +18,7 @@ public class Quiz {
         askQuestion2();
         askQuestion3();
         askQuestion4();
+        askQuestion5();
     }
 
     void askQuestion1() {
@@ -80,6 +81,22 @@ public class Quiz {
 
         char userAnswer = getUserAnswer();
         char correctAnswer = 'A';
+
+        validateUserAnswer(userAnswer, correctAnswer);
+    }
+
+    void askQuestion5() {
+        System.out.println("5. Which of the following expressions properly uses the ternary operator?");
+        System.out.println();
+
+        System.out.println("A. false && false 0 : 1 ?");
+        System.out.println("B. 'A' : 'Z' ? (!true || false) && true");
+        System.out.println("C. true || false ? \"YES\" : \"NO\"");
+        System.out.println("D. true ^ false");
+        System.out.println();
+
+        char userAnswer = getUserAnswer();
+        char correctAnswer = 'C';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
