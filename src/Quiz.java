@@ -17,6 +17,7 @@ public class Quiz {
         askQuestion1();
         askQuestion2();
         askQuestion3();
+        askQuestion4();
     }
 
     void askQuestion1() {
@@ -36,7 +37,7 @@ public class Quiz {
     }
 
     void askQuestion2() {
-        System.out.println("2. Which of the following represents a single-line comment?");
+        System.out.println("2. Which of the following pieces of code represents a single-line comment?");
         System.out.println();
 
         System.out.println("A. /* */");
@@ -63,6 +64,22 @@ public class Quiz {
 
         char userAnswer = getUserAnswer();
         char correctAnswer = 'C';
+
+        validateUserAnswer(userAnswer, correctAnswer);
+    }
+
+    void askQuestion4() {
+        System.out.println("4. Which of the following types is NOT used for storing integers?");
+        System.out.println();
+
+        System.out.println("A. double");
+        System.out.println("B. int");
+        System.out.println("C. short");
+        System.out.println("D. byte");
+        System.out.println();
+
+        char userAnswer = getUserAnswer();
+        char correctAnswer = 'A';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
