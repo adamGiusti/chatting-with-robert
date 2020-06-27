@@ -35,17 +35,17 @@ public class Quiz {
     }
 
     void askQuestion2() {
-        System.out.println("1. Which of the following variable names is an illegal identifier?");
+        System.out.println("2. Which of the following pieces of code represents a single-line comment?");
         System.out.println();
 
-        System.out.println("A. _variableOne");
-        System.out.println("B. $variableTwo");
-        System.out.println("C. variable3");
-        System.out.println("D. 4thVariable");
+        System.out.println("A. /* */");
+        System.out.println("B. //");
+        System.out.println("C. <!-- -->");
+        System.out.println("D. #");
         System.out.println();
 
         char userAnswer = getUserAnswer();
-        char correctAnswer = 'D';
+        char correctAnswer = 'B';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
