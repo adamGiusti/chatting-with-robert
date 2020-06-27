@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Quiz {
     Scanner scanner = new Scanner(System.in);
     int numberOfQuestions = 5;
+    int currentQuestion = 0;
     int score;
 
     void start() {
@@ -11,13 +12,19 @@ public class Quiz {
         System.out.println();
 
         askQuestions();
+        printResults();
     }
 
     void askQuestions() {
+        currentQuestion++;
         askQuestion1();
+        currentQuestion++;
         askQuestion2();
+        currentQuestion++;
         askQuestion3();
+        currentQuestion++;
         askQuestion4();
+        currentQuestion++;
         askQuestion5();
     }
 
@@ -32,7 +39,7 @@ public class Quiz {
         System.out.println();
 
         char userAnswer = getUserAnswer();
-        char correctAnswer = 'D';
+        char correctAnswer = 'd';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
@@ -48,7 +55,7 @@ public class Quiz {
         System.out.println();
 
         char userAnswer = getUserAnswer();
-        char correctAnswer = 'B';
+        char correctAnswer = 'b';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
@@ -64,7 +71,7 @@ public class Quiz {
         System.out.println();
 
         char userAnswer = getUserAnswer();
-        char correctAnswer = 'C';
+        char correctAnswer = 'c';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
@@ -80,7 +87,7 @@ public class Quiz {
         System.out.println();
 
         char userAnswer = getUserAnswer();
-        char correctAnswer = 'A';
+        char correctAnswer = 'a';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
@@ -96,13 +103,13 @@ public class Quiz {
         System.out.println();
 
         char userAnswer = getUserAnswer();
-        char correctAnswer = 'C';
+        char correctAnswer = 'c';
 
         validateUserAnswer(userAnswer, correctAnswer);
     }
 
     char getUserAnswer() {
-        char userAnswer = scanner.next().charAt(0);
+        char userAnswer = Character.toLowerCase(scanner.next().charAt(0));
         System.out.println();
 
         return userAnswer;
@@ -111,11 +118,37 @@ public class Quiz {
     void validateUserAnswer(char userAnswer, char correctAnswer) {
         if (userAnswer == correctAnswer) {
             System.out.println("Correct!");
-            System.out.println();
             score++;
         } else {
             System.out.println("Incorrect.");
-            System.out.println();
+        }
+
+        if (currentQuestion != numberOfQuestions) {
+            System.out.println("Current score: " + getScore());
+        }
+
+        System.out.println();
+    }
+
+    String getScore() {
+        return score + " / " + currentQuestion;
+    }
+
+    void printResults() {
+        System.out.println("Finished!");
+        System.out.println("Your final score was " + getScore() + ".");
+        System.out.println();
+
+        double finalScoreProportion = (double) score / numberOfQuestions;
+
+        if (finalScoreProportion == 1) {
+            System.out.println("Congratulations! That's a perfect score.");
+        } else if (finalScoreProportion >= 0.8) {
+            System.out.println("Not bad!");
+        } else if (finalScoreProportion >= 0.6) {
+            System.out.println("You might want to brush up on your Java skills.");
+        } else {
+            System.out.println("A failing score may sound bad, but you learn more from failure than success. Pick yourself up, and keep on practicing!");
         }
     }
 }

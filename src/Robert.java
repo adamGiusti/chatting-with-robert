@@ -47,19 +47,20 @@ public class Robert {
     }
 
     void playQuiz() {
-        System.out.println("Anyway, like I said before, I was programmed in Java.");
-        System.out.println("It's quite an amazing language, really");
+        System.out.println("Anyways, like I said before, I was programmed in Java.");
+        System.out.println("It's quite an amazing language, really.");
         System.out.println("I mean, how cool is it that you can write one Java program and run it on almost any platform?!");
         System.out.println();
 
         System.out.println("Hey! I have a fun idea. How bout' I quiz you on your knowledge of Java?");
         System.out.println("After all, it's the reason I exist!");
 
-        System.out.println("I have 5 questions in mind.");
+        Quiz quiz = new Quiz();
+
+        System.out.println("I have " + quiz.numberOfQuestions + " questions in mind.");
         System.out.println("You can choose A, B, C, or D for each question.");
         System.out.println("Let's start!");
 
-        Quiz quiz = new Quiz();
         quiz.start();
     }
 }
