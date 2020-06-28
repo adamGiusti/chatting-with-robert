@@ -66,6 +66,7 @@ public class Robert {
         System.out.println("I have " + quiz.numberOfQuestions + " questions in mind.");
         System.out.println("You can choose A, B, C, or D for each question.");
         System.out.println("Let's start!");
+        System.out.println();
 
         quiz.start();
     }

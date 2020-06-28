@@ -2,15 +2,12 @@ import java.util.Scanner;
 
 public class Quiz {
     Scanner scanner = new Scanner(System.in);
+
     int numberOfQuestions = 5;
     int currentQuestion = 1;
-    int score;
+    int score = 0;
 
     void start() {
-        score = 0;
-
-        System.out.println();
-
         askQuestions();
         printResults();
     }
