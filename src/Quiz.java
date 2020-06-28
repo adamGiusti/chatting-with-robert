@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Quiz {
     Scanner scanner = new Scanner(System.in);
     int numberOfQuestions = 5;
-    int currentQuestion = 0;
+    int currentQuestion = 1;
     int score;
 
     void start() {
@@ -16,15 +16,10 @@ public class Quiz {
     }
 
     void askQuestions() {
-        currentQuestion++;
         askQuestion1();
-        currentQuestion++;
         askQuestion2();
-        currentQuestion++;
         askQuestion3();
-        currentQuestion++;
         askQuestion4();
-        currentQuestion++;
         askQuestion5();
     }
 
@@ -125,6 +120,8 @@ public class Quiz {
 
         if (currentQuestion != numberOfQuestions) {
             System.out.println("Current score: " + getScore());
+
+            currentQuestion++;
         }
 
         System.out.println();
@@ -150,5 +147,7 @@ public class Quiz {
         } else {
             System.out.println("A failing score may sound bad, but you learn more from failure than success. Pick yourself up, and keep on practicing!");
         }
+
+        System.out.println();
     }
 }

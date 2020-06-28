@@ -4,6 +4,12 @@ import java.util.Calendar;
 public class Robert {
     Scanner scanner = new Scanner(System.in);
 
+    String userFirstName;
+    String userLastName;
+    String userFullName;
+
+    int userAge;
+
     void introduce() {
         System.out.println("Hello there! I'm Robert, an interactive chat bot.");
         System.out.println("I'm glad you've decided to talk with me! :)");
@@ -15,34 +21,34 @@ public class Robert {
         System.out.println();
     }
 
-    void askName() {
+    void askUserName() {
         System.out.println("But enough about me, I'd like to hear about you! What's your first name?");
         System.out.println();
 
-        String firstName = scanner.next();
+        userFirstName = scanner.next();
         System.out.println();
 
         System.out.println("And your last?");
         System.out.println();
 
-        String lastName = scanner.next();
-        String fullName = firstName + " " + lastName;
+        userLastName = scanner.next();
+        userFullName = userFirstName + " " + userLastName;
         System.out.println();
 
-        System.out.println("Nice to meet you, " + fullName + ".");
+        System.out.println("Nice to meet you, " + userFullName + ".");
     }
 
-    void askBirthYear() {
+    void askUserBirthYear() {
         System.out.println("Now, tell me what year you were born.");
         System.out.println();
 
         Calendar calendar = Calendar.getInstance();
         int currentYear = calendar.get(Calendar.YEAR);
-        int birthYear = scanner.nextInt();
-        int age = currentYear - birthYear;
+        int userBirthYear = scanner.nextInt();
+        userAge = currentYear - userBirthYear;
         System.out.println();
 
-        System.out.println("Hmm, based purely on your year of birth, that must mean you're " + age + " years old.");
+        System.out.println("Hmm, based purely on your year of birth, that must mean you're " + userAge + " years old.");
         System.out.println();
     }
 
@@ -62,5 +68,18 @@ public class Robert {
         System.out.println("Let's start!");
 
         quiz.start();
+    }
+
+    void finishConversation() {
+        System.out.println("Well, " + userFirstName + ", it certainly has been a pleasure talking to you.");
+        System.out.println("Unfortunately, it's time for me to go.");
+        System.out.println();
+
+        System.out.println("But before I leave, do me a favor. Keep on learning Java.");
+        System.out.println("By learning how to code, you can become a much better problem solver and logical thinker.");
+        System.out.println("Any age is a great place to start, including " + userAge + "! ;)");
+        System.out.println();
+
+        System.out.println("Have a nice day!");
     }
 }

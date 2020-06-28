@@ -7,8 +7,9 @@ public class Main {
         Robert robert = new Robert();
 
         robert.introduce();
-        robert.askName();
-        robert.askBirthYear();
+        robert.askUserName();
+        robert.askUserBirthYear();
         robert.playQuiz();
+        robert.finishConversation();
     }
 }
